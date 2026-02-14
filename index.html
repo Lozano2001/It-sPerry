@@ -1,5 +1,3 @@
-<!-- update -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +13,85 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             overflow-x: hidden;
             color: #fff;
+            position: relative;
+        }
+
+        /* Background slideshow */
+        .background-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .background-slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: slideshow 25s infinite;
+        }
+
+        .background-slideshow img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .background-slideshow img:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        .background-slideshow img:nth-child(3) {
+            animation-delay: 10s;
+        }
+
+        .background-slideshow img:nth-child(4) {
+            animation-delay: 15s;
+        }
+
+        .background-slideshow img:nth-child(5) {
+            animation-delay: 20s;
+        }
+
+        /* Dark overlay for better text readability */
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%);
+            z-index: -1;
+        }
+
+        @keyframes slideshow {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+            4% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            24% {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
         }
 
         .container {
@@ -306,6 +379,16 @@
     </style>
 </head>
 <body>
+    <!-- Background Slideshow -->
+    <div class="background-slideshow">
+        <img src="image1.jpg" alt="Background 1">
+        <img src="image2.jpg" alt="Background 2">
+        <img src="image3.jpg" alt="Background 3">
+        <img src="image4.jpg" alt="Background 4">
+        <img src="image5.jpg" alt="Background 5">
+    </div>
+    <div class="background-overlay"></div>
+
     <div class="floating-hearts" id="floatingHearts"></div>
 
     <div class="container">
@@ -334,28 +417,7 @@
             </div>
         </section>
 
-        <section class="gallery">
-            <div class="gallery-item" style="animation-delay: 0.1s">
-                <div class="icon">💝</div>
-                <h3>Thoughtful Gifts</h3>
-                <p>Show your love with meaningful presents that come from the heart.</p>
-            </div>
-            <div class="gallery-item" style="animation-delay: 0.2s">
-                <div class="icon">🌹</div>
-                <h3>Romantic Gestures</h3>
-                <p>Express your feelings with beautiful flowers and sweet surprises.</p>
-            </div>
-            <div class="gallery-item" style="animation-delay: 0.3s">
-                <div class="icon">💑</div>
-                <h3>Quality Time</h3>
-                <p>Create unforgettable memories together with your special someone.</p>
-            </div>
-            <div class="gallery-item" style="animation-delay: 0.4s">
-                <div class="icon">💌</div>
-                <h3>Love Letters</h3>
-                <p>Pour your heart out with words that will be treasured forever.</p>
-            </div>
-        </section>
+
 
         <footer>
             <p>Made with ❤️ for Valentine's Day 2026</p>
@@ -450,4 +512,3 @@
     </script>
 </body>
 </html>
-
